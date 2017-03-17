@@ -2,6 +2,7 @@
 
 var pokemonMap = {};
 var disableBool = false;
+var versionChoice = 'x-y'
 
 // --------------------------------------------------------
 // Search handler
@@ -75,31 +76,6 @@ function displayPokemon(pokemonToDisplay) {
 
         var topRow = $("<div>");
         topRow.attr("class","row pokemonPicture text-center");
-        // pokemonBlockBody.attr("class","pokemonInfo")
-
-
-        //creates the hidden context menu for when user hovers over
-        // var hoverLookBox = $("<div>");
-        // hoverLookBox.attr("class","hoverLook");
-        // var hoverLookText = $("<div>");
-        // hoverLookText.attr("class","text");
-        // var hoverLookGlyph = $("<span>");
-        
-        // hoverLookGlyph.attr("class","glyphicon glyphicon-search");
-        // hoverLookGlyph.attr("aria-hidden","true");
-        // hoverLookText.append(hoverLookGlyph);
-        // hoverLookBox.append(hoverLookText);
-
-        // var hoverSaveBox = $("<div>");
-        // hoverSaveBox.attr("class","hoverSave");
-        // var hoverSaveText = $("<div>");
-        // hoverSaveText.attr("class","text");
-
-        // var hoverSaveGlyph = $("<span>");
-        // hoverSaveGlyph.attr("class","glyphicon glyphicon-floppy-save");
-        // hoverSaveGlyph.attr("aria-hidden","true");
-        // hoverSaveText.append(hoverSaveGlyph);
-        // hoverSaveBox.append(hoverSaveText);
 
        
         //creates img that is used for display
@@ -254,14 +230,21 @@ function apiRequest(type,val) {
 function choosePokemon(pokemon) {
   var curPokemonMoves = pokemonMap[pokemon].moves;
   $("#moveChoices").empty();
+  var versionCount = 0;
  
   for (var i = 0; i < curPokemonMoves.length; i++ ) {
 
     var moveSpan = $("<span>");
     moveSpan.attr("class","label label-success pokemonMoves");
     moveSpan.text(curPokemonMoves[i].moveName);
-    $("#moveChoices").append(moveSpan);
+    var versionIndex = curPokemonMoves[i].games.indexOf(versionChoice);
+    if (versionIndex != -1 ) {
+      $("#moveChoices").append(moveSpan);
+      versionCount ++;
+    }
   }
+
+  console.log('Moves available in', versionChoice, versionCount,'/',curPokemonMoves.length);
 
   var curPokemonAbilities = pokemonMap[pokemon].abilities;
   $("#abilityChoices").empty();
@@ -274,11 +257,31 @@ function choosePokemon(pokemon) {
     $("#abilityChoices").append(abilitySpan);
   }
 
+  var curPokemonStats = pokemonMap[pokemon].stats;
+  $("#statChoices").empty();
+ 
+  var hpDiv = $("<div>");
+  var atkDiv = $("<div>");
+  var defDiv = $("<div>");
+  var spAtkDiv = $("<div>");
+  var spDefDiv = $("<div>");
+  var speedDiv = $("<div>");
+
+  hpDiv.text("HP: " + curPokemonStats.hp.base_stat );
+  atkDiv.text("Attack: " + curPokemonStats.attack.base_stat );
+  defDiv.text("Defense: " + curPokemonStats.defense.base_stat );
+  spAtkDiv.text("Special Attack: " + curPokemonStats["special-attack"].base_stat );
+  spDefDiv.text("Special Defense: " + curPokemonStats["special-defense"].base_stat );
+  speedDiv.text("Speed: " + curPokemonStats.speed.base_stat );
+  
+  $("#statChoices").append(hpDiv);
+  $("#statChoices").append(atkDiv);
+  $("#statChoices").append(defDiv);
+  $("#statChoices").append(spAtkDiv);
+  $("#statChoices").append(spDefDiv);
+  $("#statChoices").append(speedDiv);
 
 }
-
-
-
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
