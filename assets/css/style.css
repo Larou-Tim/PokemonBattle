@@ -10,15 +10,35 @@
 	height:75;
 }
 
-
-
-.pokemonMoves, .pokemonAbility {
-	/*height:20px; */
+.pokemonMoves, .pokemonAbility, .pokemonNature {
 	font-size: 15px;
-	/*width: auto;*/
 	float: left;
-	/*background-color: #268bd2;*/
-	/*color:#ffffff;*/
 	margin: 3px 10px 0 0;
-
 }
+
+.pokemonType {
+	margin-right: 10px;
+	margin-top:6px;
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+}
+
+.statInputBox {
+	height: 30px;
+	width: 75px;
+	margin-bottom: 5px;
+}
+
+.statBox {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.evSpot {
+	height: 30px;
+}
+/*
+.pokemonMoves:hover {
+	background-color: #cb4b16;
+}*/
