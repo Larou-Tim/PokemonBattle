@@ -720,8 +720,6 @@ function choosePokemon(pokemon) {
   spDefSlider.attr("class", "selector inactive");
   speedSlider.attr("class", "selector inactive");
 
-  // <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
-
   hpSlider.attr("id", "hpSlider");
   atkSlider.attr("id", "atkSlider");
   defSlider.attr("id", "defSlider");
@@ -809,14 +807,6 @@ function choosePokemon(pokemon) {
   curBase.speedBase = curPokemonStats.speed.base_stat;
   statUpdate();
 }
-
-// $('#hpSlider').bootstrapSlider({
-//   formatter: function(value) {
-//     return 'Current value: ' + value;
-//   }
-// });
-
-
 
 function typeColor(type) {
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Theme Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js">    </script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
+    
+    <script type="text/javascript"   src="./assets/javascript/logic.js"></script>
+    <!-- <script type="text/javascript"   src="./assets/javascript/bootstrap-slider.min.js"></script> -->
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Fire js/css used for user authentication -->
+    <!-- ++++++++++++++++++++++++ -->
+
+
+
+</head>
+<body>
+
+    <div class="container">
+    <br>
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button class="btn btn-warning" type="button" id="search-button" >Pokemon Search</button>
+            </div>
+            <input type="text" class="form-control" id="search-param" placeholder="Pokemon name or number" >
+        </div><!-- /input-group -->
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div id="pokemonSpot">
+                </div>
+            </div>
+  
+
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        
+                            <div class="row">
+                            <div class="col-sm-3">
+                               <ul class="nav nav-pills nav-stacked">
+                                <li class="active"> <a data-toggle="tab" href="#moves">      Moves <span class="badge" id="movBadge"></span></a></li>
+                                <li>                <a data-toggle="tab" href="#abilities">  Ability <span class="badge" id="abiBadge"></span></a></li>
+                                <li>                <a data-toggle="tab" href="#nature">     Nature <span class="badge" id="natureBadge"></span></a></li>
+                                <li>                <a data-toggle="tab" href="#stats">      Stats <span class="badge" id="statBadge"></span></a> </li>
+                                <li>                <a data-toggle="tab" href="#finalize">   Finalize  </a></li>
+                            </ul>
+                            </div>
+                            <div class="col-sm-8">
+
+                            <div class="tab-content">
+                                <div id="moves" class="tab-pane fade in active">
+                                    <h4>Choose Four Moves</h4>
+                                    <div id="moveChoices"></div>
+                                </div>
+
+                                <div id="abilities" class="tab-pane fade">
+                                    <h4>Choose One Ability</h4>
+                                    <div id="abilityChoices"></div>
+                                </div>
+
+                                <div id="nature" class="tab-pane fade">
+                                    <h4>Choose One Nature</h4>
+                                    <div id="natureChoices"></div>
+                                </div>
+
+                                <div id="stats" class="tab-pane fade">
+                                    <h4>Assign Effort Points</h4>
+                                    <div id="statHolder"><
+                                    </div>
+                                    
+
+                                </div> <!-- /stats-->
+
+                                <div id="finalize" class="tab-pane fade">
+                                    <h4>Finalize This Pokemon</h4>
+                                    <!-- <div id="statChoices"></div> -->
+                                </div> <!-- /stats-->
+
+
+                             
+
+                            </div><!-- /tab content-->
+                            </div>
+                            
+                            </div>
+                        
+                    </div><!-- /panel body-->
+                </div><!-- /panel-->
+            </div><!-- /col sm 8-->
+        </div><!-- /row-->
+    </div><!-- /container-->
+	
+</body>
+</html>
